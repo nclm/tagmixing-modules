@@ -1,1 +1,215 @@
-// to be completed
+Recreation Kit Modules
+(subset: Basics)
+# revision 0
+
+This version in entirely unfinished :)
+The Basics subset does not include balls, hoops or any other material.
+
+Legend
+------
+
+[TODO] Things to fix, to develop
+# Main categories of modules, themes
+- Submodule/Question ([TODO] define more precisely)
+X Option (checkable) ([TODO] choices/options?)
+> Variable (one of the different types)
+  TEXT      Additional comments, extra modules, prose to interpret
+  MAP       Refers/Links to the playground map
+  QUOTE     Something to say/sing
+  PLACE     Name of location/Reference to the map/
+            Keyword like "Jail" or "Safe zone"/Generic/?
+  TIME      Time in any unit
+  NUMBER    Integer number to count
+  PLAYER(S) Roles like "IT" or "non-IT"/Name of teams/?
+  [TODO] Some default cards for PLACE and PLAYER(S) (…?) ?
+  
+Indentation hierarchizes the modules and their dependencies.
+
+Modules
+-------
+
+# GAME / PLAYGROUND
+- Name:
+  > TEXT
+- Map:
+  > MAP
+  - location of jail
+  - location of safe zones
+  - location of players
+- Going outside the playground?
+  X Unallowed, impossible
+  X As a safe zone
+  X Player is eliminated
+  X Player is frozen
+  X Player goes to jail
+
+# PLAYERS
+- Teaming?
+  X IT and non-IT
+    - How many IT at the beginning?
+      > NUMBER
+  X Teams against each other
+    - How many teams?
+      > NUMBER
+- IT/non-IT selection?
+  X Counting-out song:
+    > QUOTE (lyrics)
+      - [TODO] Sylabbs separation? 
+  X Mutual choice
+  X Other counting-out game:
+    > TEXT
+  X IT from last game are IT in this game
+  X non-IT from last game are IT in this game
+    - [TODO] Make both into one? Choice with ">PLAYER(S)"
+- Teams/Roles names:
+  > TEXT
+  > PLAYER(S)?
+ 
+# BEGINNING
+X Start delay:
+  X Time:
+    > TIME
+  X Count to:
+    > NUMBER
+  X Say/Sing:
+    > QUOTE
+    - Said by:
+      > PLAYER(S)
+    X Until a certain key word/end of sentence [TODO]
+X Special states of players when starting:
+  - Which players?
+    > PLAYER(S)
+  X Chained
+  X Hidden
+  X Frozen
+  X Jailed
+  X Eyes closed/covered
+    X Opened after start delay
+X Initial positions:
+  > TEXT
+  > MAP
+
+# ENDING
+- The game stops when:
+  X Time is out:
+    > TIME
+    - [TODO] Can time be "night fall", "dinner time", "end of recess"?
+  X Everyone is IT
+    X Except one (also below)
+  X Everyone is in prison
+  X Everyone is frozen
+    - [TODO] Define everyone ("> PLAYER(S)"?)
+  X Bored/Mutual will
+  X non-IT access:
+    > PLACE
+    - [TODO] or "> PLAYERS"?
+    X All of them
+    X One of them
+    X [TODO] "> NUMBER" of them?
+    X All the free ones among them
+  - [TODO] Others: chain broken, parallel objective ok, etc…
+
+# SAFE ZONES
+- Where/What are they?
+  X Zones drawn on the map:
+    > MAP
+  X Height/Off the ground
+    X Exceptions?
+      > TEXT
+  X Touching:
+    > TEXT (e.g. material)
+  X Shadows
+    X In
+    X Out
+X Only a certain number of players per safe zone:
+  > NUMBER
+X Safe only a certain amount of time:
+  > TIME
+X Safeness extended when holding hands/touching
+X Different safe zones per persons/teams:
+  - [TODO] Multiple cards, etc.
+
+# TAG
+- A player is tagged when:
+  X Touched
+  X Caught/Grabbed
+  X Seen
+  X Stepped on shadow
+  X Name is said/Hideout is said [TODO]
+  X Seen moving
+  X Chain broken
+    - [TODO] Who then?
+  X Other
+    > TEXT (e.g. touching both shoulders, etc…)
+- What happened when tagged?
+  X Go back to:
+    > PLACE
+  X Jailed in:
+    > PLACE
+  X Frozen
+  X Eliminated
+  X Become IT
+  X Tagging IT says:
+    > QUOTE
+    X [TODO] meanwhile tagged non-IT can try to escape
+  X Tagged non-IT says:
+    > QUOTE
+  X IT no more IT
+    X And go to:
+      > PLACE
+    X IT frozen ([TODO] ?)
+  X non-IT chained to IT
+  X No tag back
+  X non-IT ‘handicapped’:
+    > TEXT (e.g. move on one leg, close eyes, …)
+    - [TODO] Multitag
+  X All players have to do it
+  X Other:
+   > TEXT
+- [TODO] Multitag
+- [TODO] Duel/Extra chance
+  X IT have to re-tag non-IT before access to > PLACE
+  X Race to > PLACE
+  X non-IT escape during > QUOTE or > NUMBER
+  X Other:
+    > TEXT
+- [TODO] Different tag options according to teams (> PLAYER(S))
+- [TODO] Special options for last to be tagged
+
+# JAIL / FREEZING
+- Location of jail:
+  > PLACE
+  - [TODO] More options like safe zones?
+- Freed when:
+  X non-IT access:
+    > PLACE
+    - [TODO] All, one, etc?
+  X touched ([TODO] tagged?)
+    X [TODO] by:
+      > PLAYER(S)
+  X After:
+    > TIME/NUMBER
+  X Other:
+    > TEXT (e.g. under the legs, flush, …)
+X Can’t be liberated after:
+  > TIME/NUMBER
+  X Then become IT
+X All freed at the same time
+X Chained freed together
+X Freed in order of jailing/freezing
+- When liberated:
+  - Say:
+    > QUOTE
+    > PLAYER(S)
+  - Go back to:
+    > PLACE
+    X Safe on the way home
+  - Right back in game
+- While frozen/(jailed?)? [TODO]
+  X Mime melting
+  X Chain to others
+  X Perform other action:
+    > TEXT
+    
+-----------
+End of file
