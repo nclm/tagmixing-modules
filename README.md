@@ -1,6 +1,6 @@
-_Recreation Kit_ Modules
+_Tag Mixing_ Modules
 ========================
 
-_‘Recreation Kit’_ (codename) is a project about playground games like tag and hide-and-seek, and how to create new ones with a modular gameplay system. The ‘Modules’ part aims to define all the possible modules that are going to be used in the project outcomes — as in the ‘_Recreation Kit_ Cards’ and the ‘_Recreation Kit_ Map’.
+_‘Tag Mixing Kit’_ is a project about playground games like tag and hide-and-seek, and how to design new ones with a modular gameplay system. These modules are the building blocks used in every outcome from the project — as in the ‘_Tag Mixing_ Cards’ and the ‘_Tag Mixing_ Map’.
 
-Project log: http://recreationkit.tumblr.com
+Project website: http://tagmixing.org
