@@ -1,24 +1,18 @@
 Tag Mixing Kit: Modules
-# revision 2
+# revision 2.1
 
-2.* revisions will be used in the first released version of the Tag Mixing Cards. This basic subset does not include balls, hoops or any other material.
+This basic subset does not include balls, hoops or any other material.
 
 Legend
 ------
 
-#  Main themes
-?  Question (needs an answer)
-X  Option (can answer a question or be independent)
-() Tip
->  Variable:
-   TEXT      Additional comment, extra module, rule to interpret
-   MAP       Refers to something on the playground map
-   QUOTE     Something to say/sing
-   PLACE     Name of a location
-   TIME      Time in any un[]it
-   NUMBER    Integer number
-   PLAYERS   Role like []it or []not-it, name of a team, “players who are frozen”, etc.
-  
+#	Branches
+?	Question (needs an answer)
+X	Option (can answer a question or be independent)
+()	Tip
+>	Custom modules:
+	TEXT, QUOTE, PLACE, TIME, NUMBER, PLAYERS, MAP
+	
 Indentation hierarchizes the modules and their dependencies.
 
 Modules
@@ -26,222 +20,215 @@ Modules
 
 # GENERAL
 ? What is the name of the game?
-  > TEXT
-? Draw a map of the playground.
-  > MAP
-  ? What happens if a player goes outside of the playground?
-    X []it’s no allowed or impossible
-    X The player is safe
-    X The player is eliminated
-    X The player is frozen at the edge
-    X The player goes to jail
+	> TEXT
+? How is the playground?
+	> MAP
+	? What happens if a player goes outside?
+		X It’s no allowed or impossible.
+		X The player is safe.
+		X The player is eliminated.
+		X The player is frozen at the edge.
+		X The player goes to jail.
 
 # PLAYERS
-? How does players team up?
-  X Two teams with two roles: []it and []not-it
-    ? How many []it are there at the beginning?
-      > NUMBER
-  X Several teams tagging each other
-    ? How many teams for this game?
-      > NUMBER
-? How are []it and []not-it chosen among the players?
-  X With a counting-out song:
-    > QUOTE
-  X By mutual choice
-  X With a counting-out game:
-    > TEXT
-  X [>PLAYERS] from last game are []it in this game
-    (You can use a [>PLAYERS]players card to complete the sentence)
-? How do you call the teams or the roles:
-  (You can combine [>PLAYERS] and [>TEXT] cards to answer this question)
-  > PLAYERS
-  > TEXT
+? How do players team up?
+	X Two teams with two roles: it and not-it.
+		? How many it are there at the beginning?
+			> NUMBER
+	X Several teams tagging each other.
+		? How many teams are there in this game?
+			> NUMBER
+? How are it and not-it chosen among players?
+	X With everyone agreeing.
+	X With this counting-out song:
+		> QUOTE
+	X With this counting-out game:
+		> TEXT
+	X These players from last game are it in this one:
+		> PLAYERS
+? How do you call the teams or the roles?
+	(Combine PLAYERS and TEXT modules to answer.)
+	> PLAYERS
+	> TEXT
  
 # BEGINNING
-? Is there something to do before the game actually starts?
-  (You can add a [>PLAYERS] card at your answer if only some of the players have to do it.)
-  > PLAYERS
-  X Wait for:
-    > TIME
-  X Count to:
-    > NUMBER
-  X Say:
-    > QUOTE
-  X Sing:
-    > QUOTE
-    (For both:)
-    X Until this special word starts the game.
-      > QUOTE
-  X Close or cover their eyes.
-    X Open as soon as the game starts.
-? Does players have a special state when the game starts?
-  (You can add a [>PLAYERS] card at your answer to tell which players does it.)
-  > PLAYERS
-  X Holding hands.
-  X Hidden.
-  X Frozen.
-  X Jailed.
-  X Eyes closed or covered.
-
+? Is there anything to do before the game actually starts?
+	(Add a PLAYERS module at your answer if only some of the players have to do it.)
+	> PLAYERS
+	X Wait for:
+		> TIME
+	X Count to:
+		> NUMBER
+	X Say:
+		> QUOTE
+	X Sing:
+		> QUOTE
+		(For both:)
+		X Until this special word starts the game.
+			> QUOTE
+	X Close or cover one’s eyes.
+		X Opened as soon as the game starts.
+	X Do something else:
+		> TEXT
+? Do players have a special state when starting?
+	(Add a PLAYERS module at your answer to tell which players are doing it.)
+	> PLAYERS
+	X Holding hands.
+	X Hiding.
+	X Frozen.
+	X Jailed.
+	X Eyes closed or covered.
+	X Another state:
+		> TEXT
 ? How are players placed when the game starts?
-  (You can describe it or draw it on the map.)
-  > TEXT
-  > MAP
+	(Describe it with a TEXT module, draw it on the MAP or combine PLAYERS and PLACE modules.)
+	> TEXT
+	> MAP
+	> PLAYERS
+	> PLACE
 
 # ENDING
-? When does the game stop?
-  X When time is out.
-    (With a [>TIME] card, you can tell how much time does the game last, or just write “night fall”, “dinner time” or “end of recess”.)
-    > TIME
-  X When everyone is []it.
-  X When everyone is in jail.
-  X When everyone is frozen.
-    (for the 3 “Everyone is…”)
-    X Everyone except…
-      (Add a number of extra players or define which ones.)
-  X When players are bored.
-  X When a team access a special place.
-    (You can use [>PLAYERS] and [>PLACE] cards to tell who and where.)
-    > PLAYERS
-    > PLACE
-    X All of them.
-    X One of them.
-    X [>NUMBER] of them.
-      > NUMBER
-    X All the free ones among them.
-  X When:
-    > TEXT
-  
+? When does the game end?
+	X When time is out.
+		> TIME
+	X When everyone is it.
+	X When everyone is in jail.
+	X When everyone is frozen.
+		(for the three)
+		X Everyone except:
+			> NUMBER
+			> PLAYERS
+	X When players are bored.
+	X When a team access a special place.
+		(Combine PLAYERS and PLACE modules to tell who and where.)
+		> PLAYERS
+		> PLACE
+		X All of them.
+		X One of them.
+		X All the free ones among them.
+		X As many of them:
+			> NUMBER
+	X When:
+		> TEXT
+
 # BASES
-? How are they called?
-  (Base, Den, Home)
-  > TEXT
-? Where are they?
-  X Special areas drawn on the map.
-    > MAP
-  X Off the ground.
-    X Exceptions?
-      > TEXT
-  X Touching:
-    (for instance, a certain material)
-    > TEXT
-  X In the shadows.
-    (or out, if you prefer)
-X Only a certain number of players can be in the same safe zone.
-  (How many?)
-  > NUMBER
-X The base is safe only for a certain time.
-  > TIME
+? How are the bases called?
+	> TEXT
+? What or where are the bases in this game?
+	X Special areas drawn on the map.
+		> MAP
+	X Off the ground.
+		X With some exceptions?
+			> TEXT
+			> PLACE
+	X Touching:
+		> TEXT
+	X In the shadows.
+		(or out, if you prefer.)
+X Only as many players can be in the same base:
+	> NUMBER
+X Safeness only lasts for this time:
+	> TIME
 X Safeness is extended when holding hands or touching.
 X Instant safeness can also be invoked.
-  ? By doing what?
-    > TEXT
-  ? By saying what?
-    > QUOTE
-  X This is only for a limited number of times.
-    > NUMBER
-  X Players have to wait some time before doing it again.
-    > TIME
-X Different players have different bases.
-  (Choose different options for them with [>PLAYERS] cards.)
-  (Insert this card in-between)
+	X By doing this:
+		> TEXT
+	X By saying this:
+		> QUOTE
+	X This is only for this limited number of times:
+		> NUMBER
+	X Wait some time before doing it again:
+		> TIME
+X (special option) Different players have different bases.
+	(Use PLAYERS modules to answer the questions in different ways.)
 
 # TAG
 ? How is a player tagged?
-  X Touching
-  X Catching or grabbing
-  X Seeing
-  X Stepping on their shadow
-  X Saying
-    (for instance their name or their hideout)
-    > QUOTE
-  X Seeing them moving
-  X Breaking a chain of players holding hands
-    X One player is then tagged
-    X Both players are then tagged
-  X Doing something else.
-    (e.g. touching both shoulders, etc…)
-    > TEXT
-? What happened when a player is tagged?
-  X The player goes back to a place. 
-    > PLACE
-  X The player is jailed.
-  X The player is frozen.
-  X The player is eliminated.
-  X The player becomes []it!
-    X No tag back!
-  X The players says:
-    > QUOTE
-  X []it says:
-    > QUOTE
-  X []it is no more []it.
-    X And go to:
-      > PLACE
-  X The player hold hands with []it
-  X The player get a playing handicap.
-    (e.g. move on one leg, close eyes, …)
-    > TEXT 
-  X All []not-it players have to do this.
-  X Something else happens.
-   > TEXT
-  X It’s duel time: a second chance for the player.
-    (Choose a kind of duel)
-    X They race to a certain place. 
-      > PLACE
-      X []it has to re-tag them on the way.
-      X []it has to win the race.
-    X The player can try to escape while it[] holds them and say, sing or count.
-      > NUMBER
-      > QUOTE
-    X Another kind of duel.
-      > TEXT
-
-  X MULTITAG Special option
-    What happen the first time?
-    What happen the second time?
-    Use this card and >NUMBER cards to answer the question in a different way for each time.
-    > NUMBERS
-    
-  X TEAMS Special option
-    Use this card and >PLAYERS cards to answer the question in a different way for different players. You can also use it to select “the last player to be tagged” and other special cases.
-    
+	X Touching.
+	X Catching or grabbing.
+	X Seeing.
+	X Stepping on their shadow.
+	X Seeing them moving.
+	X Saying:
+		(For instance their name or their hideout.)
+		> QUOTE
+	X Breaking a chain of players holding hands.
+		X One player is then tagged.
+		X Both players are then tagged.
+	X Doing something else:
+		> TEXT
+? What happens when a player is tagged?
+	X The player goes back to a place:
+		> PLACE
+	X The player goes to jail.
+	X The player is frozen.
+	X The player is eliminated.
+	X The player becomes it!
+		X No tag back.
+	X The players says:
+		> QUOTE
+	X It says:
+		> QUOTE
+	X It is no more it.
+		X And they go to:
+			> PLACE
+	X The player and it hold hands.
+	X The player get a playing ‘handicap’.
+		(For instance, “moving on one leg only” or “closing eyes”.)
+		> TEXT 
+	X Something else happens:
+	 > TEXT
+	X And all not-it players have to do it.
+	X It’s duel time!
+		(A second chance for the tagged player! Choose a kind of duel.)
+		X They race to this place: 
+			> PLACE
+			X It has to re-tag them on the way.
+			X It has to win the race.
+		X The player tries to escape while it holds them and says, sings or counts.
+			> QUOTE
+			> NUMBER
+		X Another kind of duel:
+			> TEXT
+X (special option) Multitag!
+	(Use NUMBER modules to answer the questions in different ways.)
+X (special option) Each team has its tag.
+	(Use PLAYERS modules to answer the questions in different ways.)
+		
 # JAIL / FREEZING
 ? How can players be set free?
-  X By accessing this place.
-    > PLACE
-    ? How many of them?
-      (can be “all”)
-      > NUMBER
-  X By being touched.
-    X [TODO] by:
-      > PLAYERS
-  X After a time.
-    > TIME/NUMBER
-  X In another way.
-     (e.g. under the legs, flush, …)
-     (See also “How is a player tagged?” for examples)
-    > TEXT
-X Players can’t be set free after a time.
-  > TIME
-  > NUMBER
-  X Then they become []it.
-  X Then they go to [>PLACE].
-  X Then they do something else.
-    (See “What happened when a player is tagged?” for examples)
-    > TEXT
+	X By players of the same team accessing this place:
+		> PLACE
+		? How many of them?
+			> NUMBER
+	X By being touched.
+		(By:)
+		> PLAYERS
+	X After a time.
+		> TIME
+	X In another way:
+		(Ideas in “How is a player tagged?”.)
+		> TEXT
+X Players can’t be set free after a time:
+	> TIME
+	X Then they become it.
+	X Then they go to this place:
+		> PLACE
+	X Then they do something else.
+		(Ideas in “What happens when a player is tagged?”.)
+		> TEXT
 X All players are set free together.
 X All players holding hands are set free together.
-X Players are set free in order of jailing or freezing.
+X Players are set free in order of jailing/freezing.
 ? What happens when a player is set free?
-  X The player says:
-    > QUOTE
-  X The player goes back to this place.
-    > PLACE
-    X And is safe on the way home.
-  X The player is back in game.
-  
-? What does jailed or frozen players do?
-  X They mime melting
-  X They hold hands together
-  X They do something else.
-    > TEXT
+	X The player says:
+		> QUOTE
+	X The player goes back to this place:
+		> PLACE
+		X And is safe on the way.
+	X The player is back in game!
+? What do jailed or frozen players do?
+	X They mime melting.
+	X They hold hands together.
+	X They do something else:
+		> TEXT
