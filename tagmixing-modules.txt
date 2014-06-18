@@ -1,5 +1,6 @@
 Tag Mixing Kit: Modules
 # revision 2.1
+# UPDATED VERSION COMING SOON!
 
 This basic subset does not include balls, hoops or any other material.
 
