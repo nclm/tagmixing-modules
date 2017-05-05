@@ -1,6 +1,6 @@
-_Tag Mixing_ Modules
+Foundation modules for _Tag Mixing_
 ====
 
-_‘Tag Mixing Kit’_ is a project about playground games like tag and hide-and-seek, and how to design new ones with a modular gameplay system. These modules are the building blocks used in every outcome from the project, as in the _Tag Mixing_ Cards, the _Tag Mixing_ Map, and the the _Tag Mixing_ App ([repository](https://github.com/nclm/tagmixing-app)).
+_‘Tag Mixing’_ is a modular gameplay system for designing outdoor chasing games, like tag and hide-and-seek. This repository hosts the building blocks for the project which are used in every outcome, as in the _Tag Mixing_ cards, the _Tag Mixing_ map, and the the future _Tag Mixing_ app ([repository](https://github.com/nclm/tagmixing-app)).
 
 * Project website: http://tagmixing.org
